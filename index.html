@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <script src="https://js.instamojo.com/v1/checkout.js"></script>
+    <script>
+      /* Start client-defined Callback Handler Functions */
+      function onOpenHandler () {
+        alert('Payments Modal is Opened');
+      }
+
+      function onCloseHandler () {
+        alert('Payments Modal is Closed');
+      }
+
+      function onPaymentSuccessHandler (response) {
+        alert('Payment Success');
+        console.log('Payment Success Response', response);
+      }
+
+      function onPaymentFailureHandler (response) {
+        alert('Payment Failure');
+        console.log('Payment Failure Response', response);
+      }
+      Instamojo.configure({
+        handlers: {
+          onOpen: onOpenHandler,
+          onClose: onCloseHandler,
+          onSuccess: onPaymentSuccessHandler,
+          onFailure: onPaymentFailureHandler
+        }
+      });
+      
+      function onButtonClick() {
+        Instamojo.open('https://www.instamojo.com/@simram502');
+      }
+    </script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="description"
+      content="The donation page for people suffering from covid."
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pattaya&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./heart.svg" />
+    <meta name="robots" content="index, follow" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Covid 19 Donation </title>
+  </head>
+  <body>
+    <div class="mainpage" id="home">
+      <header class="main-head">
+        <nav>
+          <h1 id="logo">Covid 19 Donation </h1>
+          <ul class="nav-links pages">
+            <li><a class="nav-link nav-link-ltr" href="#home">Home</a></li>
+            <li><a class="nav-link nav-link-ltr" href="#about">About</a></li>
+            <li>
+              <a class="nav-link nav-link-ltr" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero">
+          <h2>Together We Can Fight This Pandemic</h2>
+          <h3>
+            We Provide Food To The Person Who Is In Need
+          </h3>
+
+          <button onclick="onButtonClick()">
+            Donate Here
+          </button>
+        </section>
+      </main>
+    </div>
+
+    <section class="about" id="about">
+      <h1>ABOUT US</h1>
+      <h2>Covid Help Group</h2>
+
+      <div class="info">
+        <div class="info-text">
+          <h4>OUR VISION</h4>
+          <h5>Make India hunger free</h5>
+          <p>
+            All our initiatives are designed to provide essential food support
+            to underserved communities in the form of raw grains, freshly cooked
+            food or packaged food products depending on the need. Our aim is to
+            ensure, hunger never comes in the way of a brighter future.
+          </p>
+        </div>
+
+        <div class="info-img"><img src="./about.jpg" alt="" /></div>
+      </div>
+      <div class="iii">
+        <img class="b1" src="./asset-4.png" alt="" />
+        <img class="b2" src="./asset-4.png" alt="" />
+        <img class="b4" src="./asset-4.png" alt="" />
+        <img class="b6" src="./asset-4.png" alt="" />
+      </div>
+    </section>
+  </body>
+</html>
